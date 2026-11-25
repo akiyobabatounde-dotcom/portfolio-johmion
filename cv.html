@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV — ZANNOU Johmion Dieudonné Michaïah</title>
+<meta name="description" content="CV de Johmion Dieudonné Michaïah ZANNOU, designer UI/UX et graphiste à Cotonou.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;700;800&display=swap">
+<style>
+:root{--ebene:#15110e;--coton:#f4ecdf;--sable:#e9dcc5;--rouge:#c8392b;--rouge-t:#b02e21;--jaune:#eab62a;--vert:#2f7d4a;--bleu:#2b52a8;--muted:#5a4e40;--display:"Unbounded","Arial Black",sans-serif;--serif:"Instrument Serif",Georgia,serif;--body:"Manrope",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#2b2520;font-family:var(--body);color:var(--ebene)}
+.bar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:var(--ebene);color:var(--coton);font:700 14px var(--body)}
+.bar .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar a{flex-shrink:0;color:var(--ebene);background:var(--jaune);text-decoration:none;padding:10px 16px;border-radius:999px;font-weight:800}
+.bar a.ghost{background:transparent;color:var(--coton);box-shadow:inset 0 0 0 1.5px #5a4e40}
+.wrap{padding:28px 12px 48px}
+.sheet{max-width:794px;min-height:1123px;margin:0 auto;background:var(--coton);display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.45);overflow:hidden}
+header.top{background:var(--ebene);color:var(--coton);padding:24px 40px 0;display:flex;gap:24px;justify-content:space-between}
+.id{display:flex;flex-direction:column;gap:7px;flex:1;min-width:0;padding-bottom:20px}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--jaune);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.eyebrow:before{content:"";width:26px;height:2px;background:var(--jaune);flex-shrink:0}
+h1{margin:0;font-family:var(--display);font-weight:900;font-size:36px;line-height:1;letter-spacing:-.03em}
+h1 span{display:block;font-weight:700;font-size:19px;letter-spacing:-.01em;margin-top:5px}
+.tag{margin:0;font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.15;color:var(--jaune)}
+.contacts{display:grid;grid-template-columns:auto auto;gap:3px 22px;font-size:12px;line-height:1.35;color:var(--sable);margin-top:4px;justify-content:start}
+.contacts b{color:var(--coton)}
+.contacts .full{grid-column:1/-1}
+.contacts a{color:inherit;text-decoration:none}
+.photo{width:150px;height:170px;background:var(--rouge);position:relative;flex-shrink:0;align-self:flex-end}
+.photo:before{content:"";position:absolute;right:-10px;top:-10px;width:52px;height:52px;border-radius:50%;background:var(--jaune)}
+.photo img{position:absolute;left:18px;bottom:0;width:114px;height:148px;object-fit:cover;object-position:center top;border-radius:57px 57px 0 0;filter:grayscale(1)}
+.frise{height:10px;display:flex}.frise i{flex:1}
+.body{flex:1;display:flex}
+aside{width:236px;flex-shrink:0;background:var(--sable);padding:24px 20px 24px 40px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+main{flex:1;min-width:0;padding:22px 40px 24px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+h2{margin:0;font-family:var(--display);font-weight:700;font-size:15px}
+aside h2{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--rouge-t)}
+section{display:flex;flex-direction:column;gap:7px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px 8px}
+.stats b{display:block;font-family:var(--display);font-weight:900;font-size:21px}
+.stats span{font-size:12px;line-height:1.25}
+.edu{font-size:12px;line-height:1.35}.edu b.d{color:var(--vert)}.edu span{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{font-size:12px;font-weight:700;padding:4px 9px;border-radius:999px;background:var(--ebene);color:var(--coton)}
+.chip.o{background:transparent;color:var(--ebene);border:1.5px solid var(--ebene)}
+.small{font-size:12px}
+p.txt{margin:0;font-size:12.5px;line-height:1.5;color:#2a231d}
+.job{border-left:3px solid var(--jaune);padding-left:12px;display:flex;flex-direction:column;gap:4px}
+.job-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.job-h b{font-size:13px;font-weight:800}.job-h span{font-size:12px;font-weight:800;color:#8a3d12;white-space:nowrap}
+.job ul{margin:0;padding-left:15px;font-size:12px;line-height:1.45;color:#2a231d}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.card{background:#fbf6ee;border-left:4px solid var(--c);padding:7px 10px;display:flex;flex-direction:column;gap:2px}
+.card div{display:flex;justify-content:space-between;gap:6px}
+.card b{font-family:var(--display);font-size:12px;font-weight:900}
+.card div span{font-size:12px;font-weight:700;color:var(--c2,var(--c))}
+.card p{margin:0;font-size:12px;line-height:1.35;color:#3a322a}
+.quote{margin:0;font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.3;color:var(--rouge-t)}
+
+/* Tablette et mobile : le CV se réorganise au lieu de rétrécir */
+@media (max-width:820px){
+  .wrap{padding:0}
+  .sheet{min-height:0;box-shadow:none}
+  header.top{padding:24px 20px 0;gap:16px}
+  .body{flex-direction:column}
+  aside{width:auto;padding:22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:20px 18px}
+  aside .stats{grid-column:1/-1;grid-template-columns:repeat(4,1fr)}
+  aside .formation{grid-column:1/-1}
+  main{padding:22px 20px 28px;gap:20px}
+  .bar .t{display:none}
+}
+@media (max-width:560px){
+  header.top{flex-direction:column-reverse;align-items:flex-start}
+  .photo{align-self:flex-start;width:120px;height:136px}
+  .photo img{left:14px;width:92px;height:118px;border-radius:46px 46px 0 0}
+  .photo:before{width:40px;height:40px}
+  .eyebrow{font-size:11px;letter-spacing:.1em}
+  h1{font-size:32px}
+  .contacts{grid-template-columns:1fr;font-size:13px}
+  aside{grid-template-columns:1fr}
+  aside .stats{grid-template-columns:1fr 1fr}
+  .grid{grid-template-columns:1fr}
+  p.txt,.job ul{font-size:14px}
+  .card p,.edu,.small{font-size:13px}
+  .bar{padding:10px 12px}.bar a{padding:9px 13px;font-size:13px}
+}
+@media print{.bar{display:none}body{background:#fff}.wrap{padding:0}.sheet{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="bar"><a class="ghost" href="index.html">← Portfolio</a><span class="t">CV — ZANNOU Johmion Dieudonné Michaïah</span><a href="https://wa.me/2290167343057?text=Bonjour%20Johmion%2C%20j%27ai%20vu%20votre%20CV.">Me contacter</a></div>
+<div class="wrap">
+<article class="sheet">
+<header class="top">
+  <div class="id">
+    <div class="eyebrow">Designer UI/UX &amp; graphiste · Cotonou, Bénin</div>
+    <h1>ZANNOU<span>Johmion Dieudonné Michaïah</span></h1>
+    <p class="tag">Des interfaces cousues pour les gens d’ici.</p>
+    <div class="contacts">
+      <span><b>WhatsApp</b> <a href="https://wa.me/2290167343057">+229 01 67 34 30 57</a></span>
+      <span><b>E-mail</b> <a href="mailto:zapabdieu@gmail.com">zapabdieu@gmail.com</a></span>
+      <span class="full"><b>LinkedIn</b> <a href="https://www.linkedin.com/in/dieudonne-zannou/">Johmion Dieudonné Michaïah ZANNOU</a></span>
+    </div>
+  </div>
+  <div class="photo"><img src="img/profile.webp" alt="Portrait de Johmion Dieudonné Michaïah ZANNOU"></div>
+</header>
+<div class="frise" aria-hidden="true"><i style="background:#eab62a"></i><i style="background:#2f7d4a"></i><i style="background:#2b52a8"></i><i style="background:#15110e"></i><i style="background:#c8392b"></i><i style="background:#eab62a"></i><i style="background:#2f7d4a"></i><i style="background:#2b52a8"></i><i style="background:#15110e"></i><i style="background:#c8392b"></i><i style="background:#eab62a"></i><i style="background:#2f7d4a"></i><i style="background:#2b52a8"></i><i style="background:#15110e"></i><i style="background:#c8392b"></i><i style="background:#eab62a"></i></div>
+
+<div class="body">
+<aside>
+  <section class="stats">
+    <div><b>8</b><span>projets UI</span></div>
+    <div><b>120+</b><span>écrans maquettés</span></div>
+    <div><b>27</b><span>affiches publiées</span></div>
+    <div><b>8</b><span>identités visuelles</span></div>
+  </section>
+  <section class="formation">
+    <h2>Formation</h2>
+    <div class="edu"><b class="d">Juil. 2026</b><br><b>UI/UX Design (32 h) · Animation 2D-3D (20 h)</b><br><span>IFRI avec AKS-Pictures</span></div>
+    <div class="edu"><b class="d">Filière</b><br><b>Filière Internet et Multimédia</b><br><span>IFRI — Université d’Abomey-Calavi · PFE : ADMINI+ BÉNIN</span></div>
+    <div class="edu"><b class="d">2023</b><br><b>Anglais B1 (30 h)</b><br><span>TBC Cabinet International de Langues</span></div>
+    <div class="edu"><b class="d">2021</b><br><b>DTI — Informatique</b><br><span>Lycée Technique et Professionnel d’Agbokou</span></div>
+  </section>
+  <section>
+    <h2>Outils</h2>
+    <div class="chips"><span class="chip">Figma</span><span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">Flutter</span></div>
+  </section>
+  <section>
+    <h2>Langues</h2>
+    <div class="small"><b>Français</b> — courant</div>
+    <div class="small"><b>Anglais</b> — niveau B1</div>
+  </section>
+  <section>
+    <h2>Réseaux</h2>
+    <div class="small"><b>Instagram</b> @johmion007</div>
+  </section>
+</aside>
+
+<main>
+  <section>
+    <h2>Profil</h2>
+    <p class="txt">Designer UI/UX et graphiste formé en Internet et Multimédia à l’IFRI. Je conçois des applications, des plateformes web, des affiches et des identités visuelles qui partent des usages réels au Bénin : WhatsApp, Mobile Money, langues nationales, faible connexion.</p>
+  </section>
+  <section>
+    <h2>Expérience</h2>
+    <div class="job">
+      <div class="job-h"><b>Designer UI/UX &amp; graphiste freelance — Bénin</b><span>Depuis 2025</span></div>
+      <ul>
+        <li>8 applications et plateformes maquettées de bout en bout sur Figma, de la recherche au prototype.</li>
+        <li>27 affiches et visuels réseaux sociaux : lancements, formations, food, mode, événements.</li>
+        <li>8 identités visuelles : Africonex Studio, CXDRXC, CEO, DDStore, Huɛkpɔ, NID — Incubateur, ZAK Studio, MKD Deal Office.</li>
+        <li>Mise en page de magazines imprimés : Vodun Days, Octobre rose et Octobre bleu.</li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <h2>Projets sélectionnés</h2>
+    <div class="grid">
+      <div class="card" style="--c:#2f7d4a"><div><b>ADMINI+ BÉNIN</b><span>2026</span></div><p>Assistant WhatsApp multilingue pour les démarches administratives.</p></div>
+      <div class="card" style="--c:#a51d24"><div><b>Vodun Days</b><span>2026</span></div><p>Plateforme du festival de Ouidah et magazine imprimé.</p></div>
+      <div class="card" style="--c:#c4531c;--c2:#9c3f12"><div><b>Benin Culture</b><span>2026</span></div><p>Marketplace d’art béninois, billetterie QR, Mobile Money.</p></div>
+      <div class="card" style="--c:#b8662c;--c2:#8a4a1c"><div><b>AllZone</b><span>2026</span></div><p>Plateforme multiservice : achat, location, lavage, streaming.</p></div>
+      <div class="card" style="--c:#1f7a52"><div><b>ZanPay</b><span>2026</span></div><p>Liens de paiement multi-vendeurs, Mobile Money et carte.</p></div>
+      <div class="card" style="--c:#d99a0b;--c2:#8a5f00"><div><b>MaVoie</b><span>2026</span></div><p>Application d’orientation scolaire avec test et fiches métiers.</p></div>
+      <div class="card" style="--c:#0f6b47"><div><b>MonDossier-Bénin</b><span>2026</span></div><p>Portefeuille de documents, connexion NPI, partage QR.</p></div>
+      <div class="card" style="--c:#5b3fd6"><div><b>StudyMate</b><span>Flutter</span></div><p>Application de révision avec quiz IA, projet de groupe.</p></div>
+    </div>
+  </section>
+  <section>
+    <h2>Savoir-faire</h2>
+    <div class="chips"><span class="chip o">Recherche utilisateur</span><span class="chip o">Wireframes</span><span class="chip o">Maquettes haute fidélité</span><span class="chip o">Prototypes</span><span class="chip o">Design system</span><span class="chip o">Affiches</span><span class="chip o">Logos &amp; chartes</span><span class="chip o">Édition</span><span class="chip o">Motion 2D</span></div>
+  </section>
+  <p class="quote">« Je dessine d’abord pour la personne qui a le moins de temps, le moins de data et le moins de patience. »</p>
+</main>
+</div>
+</article>
+</div>
+</body>
+</html>

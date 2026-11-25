@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Johmion Dieudonné Michaïah ZANNOU — Designer UI/UX & graphiste</title>
+<meta name="description" content="Portfolio de Johmion Dieudonné Michaïah ZANNOU, designer UI/UX et graphiste basé à Cotonou : maquettes d'applications, affiches et identités visuelles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ebene:#15110e; --ebene-2:#1f1914; --coton:#f4ecdf; --coton-2:#e7dccb;
+  --rouge:#c8392b; --jaune:#eab62a; --vert:#2f7d4a; --bleu:#2b52a8; --ocre:#b8662c;
+  --muted:#b9ad9b;
+  --display:"Unbounded", "Arial Black", sans-serif;
+  --serif:"Instrument Serif", Georgia, serif;
+  --body:"Manrope", system-ui, sans-serif;
+  --r:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--ebene);color:var(--coton);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+::selection{background:var(--jaune);color:var(--ebene)}
+
+/* ---------- couture : bordures "cousues" façon tenture ---------- */
+.stitch{position:relative}
+.stitch::after{content:"";position:absolute;inset:7px;border:1.5px dashed rgba(244,236,223,.45);border-radius:2px;pointer-events:none}
+
+/* ---------- navigation ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(21,17,14,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(244,236,223,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.02em}
+.brand-mark{width:38px;height:38px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border-radius:3px;overflow:hidden}
+.brand-mark i:nth-child(1){background:var(--rouge)}.brand-mark i:nth-child(2){background:var(--jaune)}
+.brand-mark i:nth-child(3){background:var(--vert)}.brand-mark i:nth-child(4){background:var(--bleu)}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:14px;font-weight:500}
+.nav ul a{text-decoration:none;color:var(--muted);transition:color .2s}
+.nav ul a:hover{color:var(--coton)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:14px;text-decoration:none;padding:13px 22px;border-radius:999px;border:0;cursor:pointer;transition:transform .2s, background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-jaune{background:var(--jaune);color:var(--ebene)}
+.btn-ghost{background:transparent;color:var(--coton);box-shadow:inset 0 0 0 1.5px rgba(244,236,223,.35)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--coton)}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:70px 0 40px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:56px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--jaune)}
+.kicker::before{content:"";width:28px;height:2px;background:currentColor}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(44px,7.4vw,104px);line-height:.92;letter-spacing:-.03em;margin:22px 0 26px}
+h1 .ital{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--jaune)}
+.hero p.lead{font-size:clamp(17px,1.5vw,20px);max-width:560px;color:var(--coton-2)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:34px;margin-top:46px;padding-top:26px;border-top:1px solid rgba(244,236,223,.12)}
+.hero-facts b{display:block;font-family:var(--display);font-size:30px;line-height:1}
+.hero-facts span{font-size:13px;color:var(--muted)}
+
+/* panneau appliqué du portrait */
+.tenture{position:relative;aspect-ratio:4/5;border-radius:var(--r);background:var(--rouge);overflow:hidden}
+.tenture .photo{position:absolute;left:14%;right:14%;bottom:0;top:14%;border-radius:999px 999px 0 0;overflow:hidden;background:var(--coton)}
+.tenture .photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.tenture .soleil{position:absolute;top:6%;right:8%;width:24%;aspect-ratio:1;border-radius:50%;background:var(--jaune)}
+.tenture .lune{position:absolute;top:8%;left:7%;width:15%;aspect-ratio:1;border-radius:50%;box-shadow:10px 0 0 0 var(--coton);transform:rotate(-20deg)}
+.tenture .band{position:absolute;left:0;right:0;bottom:0;height:12%;background:repeating-linear-gradient(90deg,var(--ebene) 0 22px,var(--jaune) 22px 44px,var(--vert) 44px 66px,var(--bleu) 66px 88px)}
+.tenture .tag{position:absolute;left:-10px;bottom:16%;background:var(--coton);color:var(--ebene);font-family:var(--display);font-weight:700;font-size:13px;padding:10px 16px;transform:rotate(-4deg);border-radius:2px}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.tenture{max-width:420px}}
+
+/* ---------- bande défilante ---------- */
+.marquee{background:var(--jaune);color:var(--ebene);overflow:hidden;white-space:nowrap;padding:16px 0;margin-top:40px;transform:rotate(-1.2deg);border-block:3px solid var(--ebene)}
+.marquee .track{display:inline-flex;gap:40px;animation:defile 32s linear infinite;font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase}
+.marquee .track span{display:inline-flex;align-items:center;gap:40px}
+.marquee .track span::after{content:"";width:14px;height:14px;background:var(--rouge);transform:rotate(45deg)}
+@keyframes defile{to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+section{padding:110px 0}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:end;margin-bottom:54px}
+.sec-num{font-family:var(--display);font-weight:900;font-size:clamp(64px,9vw,128px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(244,236,223,.35)}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,4.2vw,56px);line-height:1;letter-spacing:-.02em}
+h2 em{font-family:var(--serif);font-weight:400;letter-spacing:0}
+.sec-head p{color:var(--muted);max-width:620px;margin-top:14px}
+@media (max-width:640px){.sec-head{grid-template-columns:1fr;gap:6px}section{padding:80px 0}}
+
+/* ---------- étude de cas ADMINI+ ---------- */
+.case{background:var(--coton);color:var(--ebene);border-radius:var(--r);overflow:hidden}
+.case-top{display:grid;grid-template-columns:1.1fr 1fr;gap:0}
+.case-intro{padding:56px}
+.case-intro .pill{display:inline-block;background:var(--vert);color:var(--coton);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;border-radius:999px}
+.case-intro h3{font-family:var(--display);font-weight:900;font-size:clamp(34px,4.4vw,62px);line-height:.95;letter-spacing:-.03em;margin:20px 0 18px}
+.case-intro h3 span{color:var(--vert)}
+.case-intro p{font-size:17px;color:#3a322a}
+.meta{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 30px;margin-top:30px;padding-top:24px;border-top:1.5px dashed #c9bba5}
+.meta dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#7c6e5c;font-weight:700}
+.meta dd{font-weight:700;font-size:15px}
+.case-visual{background:#0f4d3a;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:16px;padding:56px 30px 0;overflow:hidden;min-height:440px}
+.case-visual::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:var(--jaune);top:-140px;right:-120px;opacity:.95}
+.case-visual img{position:relative;width:42%;max-width:230px;border-radius:22px 22px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.35)}
+.case-visual img:nth-child(2){transform:translateY(-40px)}
+.case-body{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid #e0d4c1}
+.case-body div{padding:34px 40px;border-right:1.5px solid #e0d4c1}
+.case-body div:last-child{border-right:0}
+.case-body h4{font-family:var(--display);font-size:15px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.case-body h4::before{content:"";width:12px;height:12px;border-radius:2px;background:var(--c,var(--rouge))}
+.case-body p{font-size:15px;color:#4a4036}
+.screens{background:#efe5d4;padding:46px 0 46px 56px;border-top:1.5px solid #e0d4c1}
+.screens-head{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-right:56px;margin-bottom:24px;flex-wrap:wrap}
+.screens-head h4{font-family:var(--display);font-size:20px}
+.tabs{display:inline-flex;background:#e2d5bf;padding:4px;border-radius:999px}
+.tabs button{border:0;background:transparent;font:700 14px var(--body);padding:10px 18px;border-radius:999px;cursor:pointer;color:#5a4e40}
+.tabs button[aria-selected="true"]{background:var(--ebene);color:var(--coton)}
+.rail{display:flex;align-items:flex-start;gap:20px;overflow-x:auto;padding:4px 56px 18px 0;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.rail figure{flex:0 0 auto;scroll-snap-align:start;cursor:zoom-in}
+.rail.mobile figure{width:220px}
+.rail.web figure{width:min(620px,80vw)}
+.rail img{width:100%;border-radius:14px;box-shadow:0 8px 28px rgba(60,40,20,.18);background:#fff}
+.rail.web img{border-radius:8px}
+.rail.crop.web img{aspect-ratio:16/10;object-fit:cover;object-position:top}
+.rail.crop.mobile img{aspect-ratio:390/760;object-fit:cover;object-position:top}
+.rail figcaption{font-size:13px;font-weight:700;margin-top:10px;color:#5a4e40}
+.rail figcaption b{color:var(--vert);margin-right:6px}
+[hidden]{display:none!important}
+@media (max-width:900px){.case-top,.case-body{grid-template-columns:1fr}.case-body div{border-right:0;border-bottom:1.5px solid #e0d4c1}.case-intro{padding:36px 26px}.screens{padding-left:26px}.screens-head{padding-right:26px}}
+
+/* ---------- autres maquettes ---------- */
+.ui-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;margin-top:22px}
+.ui-card{grid-column:span 4;border-radius:var(--r);overflow:hidden;background:var(--ebene-2);cursor:zoom-in;display:flex;flex-direction:column;border:1px solid rgba(244,236,223,.08);transition:transform .3s}
+.ui-card:hover{transform:translateY(-6px)}
+.ui-card .thumb{aspect-ratio:4/3;overflow:hidden;background:#1d1d1d;display:grid;place-items:center}
+.ui-card .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s}
+.ui-card:hover .thumb img{transform:scale(1.04)}
+.ui-card .info{padding:22px 24px 26px;border-top:5px solid var(--c)}
+.ui-card h3{font-family:var(--display);font-size:20px;margin-bottom:6px}
+.ui-card p{font-size:14px;color:var(--muted)}
+@media (max-width:900px){.ui-card{grid-column:span 12}}
+
+
+/* projets compacts */
+.proj{background:var(--coton);color:var(--ebene);border-radius:var(--r);overflow:hidden;margin-bottom:40px;border-top:8px solid var(--pc)}
+.proj-head{padding:40px 56px 30px}
+.proj .pill{display:inline-block;color:var(--coton);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;border-radius:999px}
+.proj h3{font-family:var(--display);font-weight:900;font-size:clamp(30px,3.6vw,48px);letter-spacing:-.03em;margin:14px 0 10px;line-height:1}
+.proj-head p{max-width:760px;color:#3a322a}
+.proj-meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:18px;font-size:14px;color:#5a4e40}
+.proj-meta b{color:var(--ebene)}
+.rail.wide figure{width:min(760px,86vw)}
+.rail.wide img{border-radius:10px;background:#1b1450}
+.rail.mag figure{width:auto}.rail.mag img{height:min(460px,62vh);width:auto;border-radius:4px;background:#111}
+@media (max-width:600px){.rail.mag img{height:300px}}
+@media (max-width:900px){.proj-head{padding:30px 26px 20px}}
+/* ---------- affiches ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.filters button{font:700 14px var(--body);color:var(--coton);background:transparent;border:1.5px solid rgba(244,236,223,.25);padding:10px 18px;border-radius:999px;cursor:pointer;transition:all .2s}
+.filters button:hover{border-color:var(--coton)}
+.filters button[aria-pressed="true"]{background:var(--coton);color:var(--ebene);border-color:var(--coton)}
+.filters button sup{font-size:11px;margin-left:4px;opacity:.6}
+.masonry{columns:4 260px;column-gap:18px}
+.poster{break-inside:avoid;margin-bottom:18px;position:relative;border-radius:var(--r);overflow:hidden;cursor:zoom-in;background:var(--ebene-2)}
+.poster img{width:100%;transition:transform .5s}
+.poster:hover img{transform:scale(1.035)}
+.poster figcaption{position:absolute;left:10px;right:10px;bottom:10px;background:var(--coton);color:var(--ebene);padding:9px 12px;border-radius:3px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;gap:8px;transform:translateY(130%);transition:transform .3s}
+.poster figcaption span{font-weight:500;color:#7c6e5c}
+.poster:hover figcaption,.poster:focus-visible figcaption{transform:none}
+.poster:focus-visible{outline:3px solid var(--jaune);outline-offset:3px}
+
+/* ---------- identités ---------- */
+.ident{background:var(--coton);color:var(--ebene)}
+.ident .sec-num{-webkit-text-stroke-color:rgba(21,17,14,.3)}
+.ident .sec-head p{color:#6c5f4f}
+.logos{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1.5px solid #d9ccb6;border-left:1.5px solid #d9ccb6}
+.logo{border-right:1.5px solid #d9ccb6;border-bottom:1.5px solid #d9ccb6;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;gap:14px;background:#fffaf2;transition:background .3s}
+.logo:hover{background:#fff}
+.logo img{max-height:62%;object-fit:contain;mix-blend-mode:multiply}
+.logo span{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7c6e5c}
+@media (max-width:760px){.logos{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- parcours ---------- */
+.parcours-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.timeline{list-style:none;border-left:2px dashed rgba(244,236,223,.25);padding-left:30px}
+.timeline li{position:relative;padding-bottom:34px}
+.timeline li::before{content:"";position:absolute;left:-39px;top:6px;width:16px;height:16px;background:var(--c,var(--jaune));transform:rotate(45deg)}
+.timeline small{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--jaune)}
+.timeline h3{font-family:var(--display);font-size:19px;margin:6px 0 4px}
+.timeline p{font-size:15px;color:var(--muted)}
+.skills h3{font-family:var(--display);font-size:19px;margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
+.chips span{padding:9px 15px;border-radius:3px;font-weight:700;font-size:14px;background:var(--ebene-2);border:1px solid rgba(244,236,223,.12)}
+.chips span:nth-child(4n+1){border-left:4px solid var(--rouge)}
+.chips span:nth-child(4n+2){border-left:4px solid var(--jaune)}
+.chips span:nth-child(4n+3){border-left:4px solid var(--vert)}
+.chips span:nth-child(4n+4){border-left:4px solid var(--bleu)}
+.approach{background:var(--bleu);padding:34px;border-radius:var(--r)}
+.approach p{font-family:var(--serif);font-size:26px;line-height:1.25}
+@media (max-width:860px){.parcours-grid{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.contact{padding:0 0 60px}
+.contact-box{background:var(--rouge);border-radius:var(--r);padding:80px 60px;position:relative;overflow:hidden}
+.contact-box::before{content:"";position:absolute;right:-90px;top:-90px;width:340px;height:340px;border-radius:50%;background:var(--jaune)}
+.contact-box::after{content:"";position:absolute;right:150px;top:150px;width:90px;height:90px;background:var(--ebene);transform:rotate(45deg)}
+.contact-box h2{font-size:clamp(36px,6vw,84px);max-width:820px;position:relative;z-index:1}
+.contact-box p{max-width:560px;margin:22px 0 34px;font-size:18px;position:relative;z-index:1}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px;position:relative;z-index:1}
+.btn-dark{background:var(--ebene);color:var(--coton)}
+.btn-light{background:var(--coton);color:var(--ebene)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+@media (max-width:640px){.nav-cv{display:none}}
+.coords{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px;position:relative;z-index:1;font-size:14px}
+.coords small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.75;font-weight:700}
+.coords a{text-decoration:none;font-weight:700;word-break:break-all}
+@media (max-width:860px){.contact-box{padding:56px 26px}.coords{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.masonry{columns:2;column-gap:10px}.poster{margin-bottom:10px}.brand span+*{display:none}.nav .btn{padding:10px 14px;font-size:13px}.brand{font-size:13px}.contact-box::before{width:200px;height:200px}.contact-box::after{display:none}}
+footer{padding:30px 0 50px;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;background:rgba(10,8,6,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:60px 70px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb button{position:absolute;background:var(--coton);color:var(--ebene);border:0;width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer;display:grid;place-items:center}
+.lb .close{top:16px;right:16px}.lb .prev{left:14px;top:50%;transform:translateY(-50%)}.lb .next{right:14px;top:50%;transform:translateY(-50%)}
+.lb .cap{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:14px;font-weight:700;color:var(--coton-2);text-align:center}
+@media (max-width:640px){.lb{padding:70px 12px}.lb .prev,.lb .next{top:auto;bottom:12px;transform:none}.lb .cap{bottom:76px}}
+
+/* apparition au défilement */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease, transform .8s ease}
+.js .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Johmion Dieudonné Michaïah ZANNOU</a>
+    <ul>
+      <li><a href="#projets">Projets UI</a></li>
+      <li><a href="#affiches">Affiches</a></li>
+      <li><a href="#identites">Identités</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+    </ul>
+    <div class="nav-actions"><a class="btn btn-ghost nav-cv" href="cv.html">Mon CV</a><a class="btn btn-jaune" href="#contact">Travaillons ensemble</a></div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Designer UI/UX &amp; graphiste · Cotonou, Bénin</span>
+      <h1>Des interfaces <span class="ital">cousues</span> pour les gens d'ici.</h1>
+      <p class="lead">Je m'appelle Johmion Dieudonné Michaïah ZANNOU. Je conçois des applications, des affiches et des identités visuelles qui partent des usages réels — WhatsApp, Mobile Money, langues nationales — pour arriver à des produits simples et beaux.</p>
+      <div class="hero-cta">
+        <a class="btn btn-jaune" href="#projets">Voir mes projets →</a>
+        <a class="btn btn-ghost" href="cv.html">Voir mon CV</a>
+        <a class="btn btn-ghost" href="https://wa.me/2290167343057">Écrire sur WhatsApp</a>
+      </div>
+      <div class="hero-facts">
+        <div><b>27</b><span>affiches publiées</span></div>
+        <div><b>8</b><span>identités visuelles</span></div>
+        <div><b>8</b><span>projets UI</span></div><div><b>120+</b><span>écrans maquettés</span></div>
+        
+      </div>
+    </div>
+    <div class="tenture stitch reveal" aria-hidden="true">
+      <span class="soleil"></span><span class="lune"></span>
+      <div class="photo"><img src="img/profile.webp" alt=""></div>
+      <span class="band"></span>
+      <span class="tag">Disponible en freelance ✦</span>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Design UI/UX</span><span>Prototypes Figma</span><span>Affiches</span><span>Identités visuelles</span><span>Direction artistique</span><span>Cotonou → le monde</span>
+      <span>Design UI/UX</span><span>Prototypes Figma</span><span>Affiches</span><span>Identités visuelles</span><span>Direction artistique</span><span>Cotonou → le monde</span>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ 01 PROJETS UI ============ -->
+<section id="projets">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <div>
+        <h2>Études <em>de cas</em></h2>
+        <p>Des projets conçus de bout en bout sur Figma : de la recherche aux écrans haute fidélité.</p>
+      </div>
+    </div>
+
+    <article class="case reveal">
+      <div class="case-top">
+        <div class="case-intro">
+          <span class="pill">Projet de fin d'études · 2026</span>
+          <h3>ADMINI+ <span>BÉNIN</span></h3>
+          <p>Un assistant WhatsApp qui guide chaque citoyen dans ses démarches administratives — pièces à fournir, coûts, où aller — en français et en langues nationales, avec des messages vocaux. Côté administration, un espace web permet de publier les fiches, suivre les conversations et transférer vers un agent.</p>
+          <dl class="meta">
+            <div><dt>Rôle</dt><dd>UX research, UI, prototype</dd></div>
+            <div><dt>Plateformes</dt><dd>WhatsApp + espace web</dd></div>
+            <div><dt>Langues</dt><dd>Français, fongbé, yoruba, bariba…</dd></div>
+            <div><dt>Outil</dt><dd>Figma</dd></div>
+          </dl>
+        </div>
+        <div class="case-visual">
+          <img src="img/admini/m1.webp" alt="Écran d'accueil et choix de la langue de l'assistant ADMINI+">
+          <img src="img/admini/m3.webp" alt="Fiche démarche : certificat de résidence">
+        </div>
+      </div>
+      <div class="case-body">
+        <div style="--c:var(--rouge)"><h4>Le problème</h4><p>Les démarches sont dispersées entre plusieurs sites et guichets. Beaucoup de citoyens ne lisent pas le français et se déplacent sans savoir quelles pièces apporter.</p></div>
+        <div style="--c:var(--jaune)"><h4>Le choix</h4><p>Pas une nouvelle app à télécharger : WhatsApp, que tout le monde utilise déjà. Des menus courts, des boutons, et un résumé vocal en fongbé pour chaque fiche.</p></div>
+        <div style="--c:var(--vert)"><h4>Le résultat</h4><p>5 écrans de conversation et 5 écrans d'administration : fiches démarches, annuaire, assistance humaine, statistiques et gestion des langues.</p></div>
+      </div>
+      <div class="screens">
+        <div class="screens-head">
+          <h4>Les écrans</h4>
+          <div class="tabs" role="tablist">
+            <button role="tab" aria-selected="true" data-tab="mobile">Assistant WhatsApp</button>
+            <button role="tab" aria-selected="false" data-tab="web">Espace administration</button>
+          </div>
+        </div>
+        <div class="rail mobile" data-panel="mobile" data-group="admini-m">
+          <figure><img loading="lazy" src="img/admini/m1.webp" alt="Accueil et langue"><figcaption><b>M1</b>Accueil et langue</figcaption></figure>
+          <figure><img loading="lazy" src="img/admini/m2.webp" alt="Menu des domaines"><figcaption><b>M2</b>Menu des domaines</figcaption></figure>
+          <figure><img loading="lazy" src="img/admini/m3.webp" alt="Fiche démarche"><figcaption><b>M3</b>Fiche démarche</figcaption></figure>
+          <figure><img loading="lazy" src="img/admini/m4.webp" alt="Annuaire administration"><figcaption><b>M4</b>Annuaire administration</figcaption></figure>
+          <figure><img loading="lazy" src="img/admini/m5.webp" alt="Transfert vers un agent"><figcaption><b>M5</b>Transfert vers un agent</figcaption></figure>
+        </div>
+        <div class="rail web" data-panel="web" data-group="admini-w" hidden>
+          <figure><img loading="lazy" src="img/admini/w1.webp" alt="Liste des démarches"><figcaption><b>W1</b>Liste des démarches</figcaption></figure>
+          <figure><img loading="lazy" src="img/admini/w2.webp" alt="Édition d'une fiche"><figcaption><b>W2</b>Édition d'une fiche</figcaption></figure>
+          <figure><img loading="lazy" src="img/admini/w3.webp" alt="Assistance"><figcaption><b>W3</b>Assistance</figcaption></figure>
+          <figure><img loading="lazy" src="img/admini/w4.webp" alt="Statistiques"><figcaption><b>W4</b>Statistiques</figcaption></figure>
+          <figure><img loading="lazy" src="img/admini/w5.webp" alt="Administrations et langues"><figcaption><b>W5</b>Administrations et langues</figcaption></figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="case reveal" style="margin-top:60px">
+      <div class="case-top">
+        <div class="case-intro">
+          <span class="pill" style="background:var(--ocre)">Plateforme multiservice · 2026</span>
+          <h3>All<span style="color:var(--ocre)">Zone</span></h3>
+          <p>« Achetez, louez, lavez, regardez. Une seule zone. » Une plateforme qui réunit en un seul compte la vente de téléphones, les annonces et la location de voitures, la réservation de lavage auto et des offres de streaming — avec paiement Mobile Money et un espace d'administration.</p>
+          <dl class="meta">
+            <div><dt>Rôle</dt><dd>UX, UI, prototype</dd></div>
+            <div><dt>Plateformes</dt><dd>Site web, mobile, admin</dd></div>
+            <div><dt>Écrans</dt><dd>24 maquettes</dd></div>
+            <div><dt>Outil</dt><dd>Figma</dd></div>
+          </dl>
+        </div>
+        <div class="case-visual" style="background:#2a1a10">
+          <img src="img/fig/m01-accueil-mobile.webp" alt="Accueil mobile AllZone" style="object-fit:cover;object-position:top;aspect-ratio:390/700">
+          <img src="img/fig/m04-lavage-mobile.webp" alt="Réservation de lavage sur mobile" style="object-fit:cover;object-position:top;aspect-ratio:390/700">
+        </div>
+      </div>
+      <div class="case-body">
+        <div style="--c:var(--ocre)"><h4>L'idée</h4><p>Un seul compte pour plusieurs besoins du quotidien, au lieu de passer d'un site à l'autre pour acheter, louer ou réserver.</p></div>
+        <div style="--c:var(--jaune)"><h4>Le parcours</h4><p>Catalogue, fiche produit, panier, paiement MTN / Moov / Celtiis ou carte, puis confirmation et suivi depuis l'espace client.</p></div>
+        <div style="--c:var(--vert)"><h4>Le back-office</h4><p>Tableau de bord des ventes, planning des réservations de lavage et gestion des produits pour l'équipe.</p></div>
+      </div>
+      <div class="screens">
+        <div class="screens-head">
+          <h4>Les écrans</h4>
+          <div class="tabs" role="tablist">
+            <button role="tab" aria-selected="true" data-tab="az-web">Site web</button>
+            <button role="tab" aria-selected="false" data-tab="az-mob">Mobile</button>
+            <button role="tab" aria-selected="false" data-tab="az-adm">Admin</button>
+          </div>
+        </div>
+        <div class="rail web crop" data-panel="az-web" data-group="az-web"><figure><img loading="lazy" src="img/fig/01-accueil.webp" alt="Accueil"><figcaption><b>01</b>Accueil</figcaption></figure><figure><img loading="lazy" src="img/fig/02-telephones-catalogue.webp" alt="Téléphones — catalogue"><figcaption><b>02</b>Téléphones — catalogue</figcaption></figure><figure><img loading="lazy" src="img/fig/03-telephone-fiche-produit.webp" alt="Fiche produit"><figcaption><b>03</b>Fiche produit</figcaption></figure><figure><img loading="lazy" src="img/fig/04-voitures-annonces.webp" alt="Voitures — annonces"><figcaption><b>04</b>Voitures — annonces</figcaption></figure><figure><img loading="lazy" src="img/fig/13-voiture-fiche-vehicule.webp" alt="Fiche véhicule"><figcaption><b>05</b>Fiche véhicule</figcaption></figure><figure><img loading="lazy" src="img/fig/05-location-vehicule.webp" alt="Location de véhicule"><figcaption><b>06</b>Location de véhicule</figcaption></figure><figure><img loading="lazy" src="img/fig/06-lavage-reservation.webp" alt="Lavage — réservation"><figcaption><b>07</b>Lavage — réservation</figcaption></figure><figure><img loading="lazy" src="img/fig/07-streaming.webp" alt="Streaming"><figcaption><b>08</b>Streaming</figcaption></figure><figure><img loading="lazy" src="img/fig/08-espace-client.webp" alt="Espace client"><figcaption><b>09</b>Espace client</figcaption></figure><figure><img loading="lazy" src="img/fig/09-panier.webp" alt="Panier"><figcaption><b>10</b>Panier</figcaption></figure><figure><img loading="lazy" src="img/fig/10-paiement.webp" alt="Paiement"><figcaption><b>11</b>Paiement</figcaption></figure><figure><img loading="lazy" src="img/fig/11-confirmation-commande.webp" alt="Confirmation de commande"><figcaption><b>12</b>Confirmation de commande</figcaption></figure><figure><img loading="lazy" src="img/fig/12-connexion-inscription.webp" alt="Connexion / inscription"><figcaption><b>13</b>Connexion / inscription</figcaption></figure><figure><img loading="lazy" src="img/fig/14-aide-faq-contact.webp" alt="Aide, FAQ, contact"><figcaption><b>14</b>Aide, FAQ, contact</figcaption></figure><figure><img loading="lazy" src="img/fig/15-page-legale-cgv.webp" alt="CGV"><figcaption><b>15</b>CGV</figcaption></figure></div>
+        <div class="rail mobile crop" data-panel="az-mob" data-group="az-mob" hidden><figure><img loading="lazy" src="img/fig/m01-accueil-mobile.webp" alt="Accueil"><figcaption><b>M1</b>Accueil</figcaption></figure><figure><img loading="lazy" src="img/fig/m02-catalogue-mobile.webp" alt="Catalogue"><figcaption><b>M2</b>Catalogue</figcaption></figure><figure><img loading="lazy" src="img/fig/m03-fiche-produit-mobile.webp" alt="Fiche produit"><figcaption><b>M3</b>Fiche produit</figcaption></figure><figure><img loading="lazy" src="img/fig/m04-lavage-mobile.webp" alt="Lavage"><figcaption><b>M4</b>Lavage</figcaption></figure><figure><img loading="lazy" src="img/fig/m05-paiement-mobile.webp" alt="Paiement"><figcaption><b>M5</b>Paiement</figcaption></figure><figure><img loading="lazy" src="img/fig/m06-espace-client-mobile.webp" alt="Espace client"><figcaption><b>M6</b>Espace client</figcaption></figure></div>
+        <div class="rail web crop" data-panel="az-adm" data-group="az-adm" hidden><figure><img loading="lazy" src="img/fig/16-admin-tableau-de-bord.webp" alt="Tableau de bord"><figcaption><b>A1</b>Tableau de bord</figcaption></figure><figure><img loading="lazy" src="img/fig/17-admin-planning.webp" alt="Planning"><figcaption><b>A2</b>Planning</figcaption></figure><figure><img loading="lazy" src="img/fig/18-admin-produits.webp" alt="Produits"><figcaption><b>A3</b>Produits</figcaption></figure></div>
+      </div>
+    </article>
+    <div class="sec-head reveal" style="margin-top:110px;margin-bottom:34px;grid-template-columns:1fr">
+      <div><h2>Plus de <em>projets</em></h2><p>Applications, plateformes et éditions conçues sur Figma ces derniers mois : culture et événementiel, fintech, orientation scolaire, services publics et éducation.</p></div>
+    </div>
+    <article class="proj reveal" style="--pc:#a51d24">
+      <div class="proj-head">
+        <div><span class="pill" style="background:var(--pc)">Événementiel & édition · 2026</span><h3>Vodun Days</h3><p>Une proposition de plateforme et de magazine pour le festival des Vodun Days à Ouidah : programme jour par jour, carte interactive, demandes de stand et d’accréditation presse, badge média numérique et espace organisateur — prolongés par un magazine imprimé qui raconte les Zangbeto, la ville-mémoire et les huit jours de festivités.</p><div class="proj-meta"><span><b>Écrans</b> 9</span><span><b>Pages magazine</b> 6</span><span><b>Plateformes</b> Web, mobile, print</span><span><b>Outil</b> Figma</span></div></div>
+      </div>
+      <div class="screens">
+        <div class="screens-head"><h4>Les écrans</h4><div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="vd-0">Site web</button><button role="tab" aria-selected="false" data-tab="vd-1">Application mobile</button><button role="tab" aria-selected="false" data-tab="vd-2">Magazine imprimé</button></div></div>
+        <div class="rail web crop" data-panel="vd-0" data-group="vd-0"><figure><img loading="lazy" src="img/p/vd-01-accueil.webp" alt="Accueil"><figcaption><b>01</b>Accueil</figcaption></figure><figure><img loading="lazy" src="img/p/vd-02-village-stand.webp" alt="Village — demande de stand"><figcaption><b>02</b>Village — demande de stand</figcaption></figure><figure><img loading="lazy" src="img/p/vd-03-espace-organisateur.webp" alt="Espace organisateur"><figcaption><b>03</b>Espace organisateur</figcaption></figure></div><div class="rail mobile crop" data-panel="vd-1" data-group="vd-1" hidden><figure><img loading="lazy" src="img/p/vd-m1-accueil.webp" alt="Accueil"><figcaption><b>M1</b>Accueil</figcaption></figure><figure><img loading="lazy" src="img/p/vd-m2-programme.webp" alt="Programme"><figcaption><b>M2</b>Programme</figcaption></figure><figure><img loading="lazy" src="img/p/vd-m3-fiche-activite.webp" alt="Fiche activité"><figcaption><b>M3</b>Fiche activité</figcaption></figure><figure><img loading="lazy" src="img/p/vd-m4-carte.webp" alt="Carte interactive"><figcaption><b>M4</b>Carte interactive</figcaption></figure><figure><img loading="lazy" src="img/p/vd-m5-accreditation.webp" alt="Demande d’accréditation"><figcaption><b>M5</b>Demande d’accréditation</figcaption></figure><figure><img loading="lazy" src="img/p/vd-m6-badge-media.webp" alt="Badge média numérique"><figcaption><b>M6</b>Badge média numérique</figcaption></figure></div><div class="rail mag" data-panel="vd-2" data-group="vd-2" hidden><figure><img loading="lazy" src="img/p/vd-mag-couverture.webp" alt="Couverture"><figcaption><b>01</b>Couverture</figcaption></figure><figure><img loading="lazy" src="img/p/vd-mag-p02-03.webp" alt="Édito et sommaire"><figcaption><b>02</b>Édito et sommaire</figcaption></figure><figure><img loading="lazy" src="img/p/vd-mag-p06-07.webp" alt="Récit — les Zangbeto"><figcaption><b>03</b>Récit — les Zangbeto</figcaption></figure><figure><img loading="lazy" src="img/p/vd-mag-p14-15.webp" alt="Ouidah, ville-mémoire"><figcaption><b>04</b>Ouidah, ville-mémoire</figcaption></figure><figure><img loading="lazy" src="img/p/vd-mag-p22-23.webp" alt="Huit jours de festivités"><figcaption><b>05</b>Huit jours de festivités</figcaption></figure><figure><img loading="lazy" src="img/p/vd-mag-quatrieme.webp" alt="Quatrième de couverture"><figcaption><b>06</b>Quatrième de couverture</figcaption></figure></div>
+      </div>
+    </article><article class="proj reveal" style="--pc:#c4531c">
+      <div class="proj-head">
+        <div><span class="pill" style="background:var(--pc)">Marketplace culturelle · 2026</span><h3>Benin Culture</h3><p>Une marketplace de l’art et de la culture béninoise : les créateurs vérifiés d’Abomey, Cotonou ou Porto-Novo vendent sculptures, tentures et poteries, les organisateurs vendent leurs billets avec QR code, et tout se paie par MTN MoMo, Moov Money ou carte. Un espace vendeur et un back-office suivent les commandes et les commissions.</p><div class="proj-meta"><span><b>Écrans</b> 14</span><span><b>Plateformes</b> Web, mobile, back-office</span><span><b>Outil</b> Figma</span></div></div>
+      </div>
+      <div class="screens">
+        <div class="screens-head"><h4>Les écrans</h4><div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="bc-0">Site public</button><button role="tab" aria-selected="false" data-tab="bc-1">Parcours mobile</button><button role="tab" aria-selected="false" data-tab="bc-2">Espaces pro</button></div></div>
+        <div class="rail web crop" data-panel="bc-0" data-group="bc-0"><figure><img loading="lazy" src="img/p/bc-01-accueil.webp" alt="Accueil"><figcaption><b>01</b>Accueil</figcaption></figure><figure><img loading="lazy" src="img/p/bc-05-catalogue.webp" alt="Catalogue des œuvres"><figcaption><b>02</b>Catalogue des œuvres</figcaption></figure><figure><img loading="lazy" src="img/p/bc-06-profil-createur.webp" alt="Profil créateur"><figcaption><b>03</b>Profil créateur</figcaption></figure><figure><img loading="lazy" src="img/p/bc-07-agenda.webp" alt="Agenda culturel"><figcaption><b>04</b>Agenda culturel</figcaption></figure></div><div class="rail mobile crop" data-panel="bc-1" data-group="bc-1" hidden><figure><img loading="lazy" src="img/p/bc-m02-fiche-oeuvre.webp" alt="Fiche œuvre"><figcaption><b>01</b>Fiche œuvre</figcaption></figure><figure><img loading="lazy" src="img/p/bc-m03-evenement-billets.webp" alt="Événement et billets"><figcaption><b>02</b>Événement et billets</figcaption></figure><figure><img loading="lazy" src="img/p/bc-m04-billet-qr.webp" alt="Billet avec QR code"><figcaption><b>03</b>Billet avec QR code</figcaption></figure><figure><img loading="lazy" src="img/p/bc-m08-connexion.webp" alt="Connexion"><figcaption><b>04</b>Connexion</figcaption></figure><figure><img loading="lazy" src="img/p/bc-m09-panier.webp" alt="Panier"><figcaption><b>05</b>Panier</figcaption></figure><figure><img loading="lazy" src="img/p/bc-m10-paiement.webp" alt="Paiement Mobile Money"><figcaption><b>06</b>Paiement Mobile Money</figcaption></figure><figure><img loading="lazy" src="img/p/bc-m11-commande-confirmee.webp" alt="Commande confirmée"><figcaption><b>07</b>Commande confirmée</figcaption></figure><figure><img loading="lazy" src="img/p/bc-m12-controle-billets.webp" alt="Contrôle des billets"><figcaption><b>08</b>Contrôle des billets</figcaption></figure></div><div class="rail web crop" data-panel="bc-2" data-group="bc-2" hidden><figure><img loading="lazy" src="img/p/bc-13-espace-vendeur.webp" alt="Espace vendeur"><figcaption><b>01</b>Espace vendeur</figcaption></figure><figure><img loading="lazy" src="img/p/bc-14-administration.webp" alt="Administration"><figcaption><b>02</b>Administration</figcaption></figure></div>
+      </div>
+    </article><article class="proj reveal" style="--pc:#c2366e">
+      <div class="proj-head">
+        <div><span class="pill" style="background:var(--pc)">Édition santé · 2026</span><h3>Octobre rose &amp; Octobre bleu</h3><p>Deux magazines de prévention de 6 pages, l’un sur le cancer du sein, l’autre sur le cancer de la prostate : chiffres clés du Bénin (CIRC, Globocan 2022), signes qui doivent alerter, autopalpation, dépistage expliqué sans tabou. Une même grille éditoriale, deux univers de couleurs.</p><div class="proj-meta"><span><b>Pages</b> 12</span><span><b>Format</b> A4 imprimé</span><span><b>Outil</b> Figma</span></div></div>
+      </div>
+      <div class="screens">
+        <div class="screens-head"><h4>Les pages</h4><div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="oc-0">Octobre rose</button><button role="tab" aria-selected="false" data-tab="oc-1">Octobre bleu</button></div></div>
+        <div class="rail mag" data-panel="oc-0" data-group="oc-0"><figure><img loading="lazy" src="img/p/or-couverture.webp" alt="Couverture"><figcaption><b>01</b>Couverture</figcaption></figure><figure><img loading="lazy" src="img/p/or-p02-03.webp" alt="Édito et chiffres clés"><figcaption><b>02</b>Édito et chiffres clés</figcaption></figure><figure><img loading="lazy" src="img/p/or-p04-05.webp" alt="Signes et autopalpation"><figcaption><b>03</b>Signes et autopalpation</figcaption></figure><figure><img loading="lazy" src="img/p/or-quatrieme.webp" alt="Quatrième de couverture"><figcaption><b>04</b>Quatrième de couverture</figcaption></figure></div><div class="rail mag" data-panel="oc-1" data-group="oc-1" hidden><figure><img loading="lazy" src="img/p/ob-couverture.webp" alt="Couverture"><figcaption><b>01</b>Couverture</figcaption></figure><figure><img loading="lazy" src="img/p/ob-p02-03.webp" alt="Édito et chiffres clés"><figcaption><b>02</b>Édito et chiffres clés</figcaption></figure><figure><img loading="lazy" src="img/p/ob-p04-05.webp" alt="Risques et dépistage"><figcaption><b>03</b>Risques et dépistage</figcaption></figure><figure><img loading="lazy" src="img/p/ob-quatrieme.webp" alt="Quatrième de couverture"><figcaption><b>04</b>Quatrième de couverture</figcaption></figure></div>
+      </div>
+    </article><article class="proj reveal" style="--pc:#1f7a52">
+      <div class="proj-head">
+        <div><span class="pill" style="background:var(--pc)">Fintech · 2026</span><h3>ZanPay</h3><p>Une plateforme de liens de paiement multi-vendeurs pour encaisser depuis toute l’Afrique et une partie de l’Europe : le vendeur crée un lien, le client paie par Mobile Money ou carte, l’argent arrive sur son solde.</p><div class="proj-meta"><span><b>Écrans</b> 13</span><span><b>Plateformes</b> Web + mobile</span><span><b>Outil</b> Figma</span></div></div>
+      </div>
+      <div class="screens">
+        <div class="screens-head"><h4>Les écrans</h4><div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="zp-0">Site & tableau de bord</button><button role="tab" aria-selected="false" data-tab="zp-1">Page de paiement</button></div></div>
+        <div class="rail web crop" data-panel="zp-0" data-group="zp-0"><figure><img loading="lazy" src="img/p/zp-landing-desktop.webp" alt="Landing"><figcaption><b>01</b>Landing</figcaption></figure><figure><img loading="lazy" src="img/p/zp-tableau-de-bord-desktop.webp" alt="Tableau de bord"><figcaption><b>02</b>Tableau de bord</figcaption></figure><figure><img loading="lazy" src="img/p/zp-liens-de-paiement-desktop.webp" alt="Liens de paiement"><figcaption><b>03</b>Liens de paiement</figcaption></figure><figure><img loading="lazy" src="img/p/zp-nouveau-lien-desktop.webp" alt="Nouveau lien"><figcaption><b>04</b>Nouveau lien</figcaption></figure><figure><img loading="lazy" src="img/p/zp-lien-cree-desktop.webp" alt="Lien créé"><figcaption><b>05</b>Lien créé</figcaption></figure><figure><img loading="lazy" src="img/p/zp-detail-du-paiement-desktop.webp" alt="Détail du paiement"><figcaption><b>06</b>Détail du paiement</figcaption></figure><figure><img loading="lazy" src="img/p/zp-virements-desktop.webp" alt="Virements"><figcaption><b>07</b>Virements</figcaption></figure><figure><img loading="lazy" src="img/p/zp-clients-desktop.webp" alt="Clients"><figcaption><b>08</b>Clients</figcaption></figure><figure><img loading="lazy" src="img/p/zp-parametres-desktop.webp" alt="Paramètres"><figcaption><b>09</b>Paramètres</figcaption></figure><figure><img loading="lazy" src="img/p/zp-inscription-desktop.webp" alt="Inscription"><figcaption><b>10</b>Inscription</figcaption></figure><figure><img loading="lazy" src="img/p/zp-connexion-desktop.webp" alt="Connexion"><figcaption><b>11</b>Connexion</figcaption></figure></div><div class="rail mobile crop" data-panel="zp-1" data-group="zp-1" hidden><figure><img loading="lazy" src="img/p/zp-page-de-paiement-mobile.webp" alt="Page de paiement"><figcaption><b>01</b>Page de paiement</figcaption></figure><figure><img loading="lazy" src="img/p/zp-paiement-reussi-mobile.webp" alt="Paiement réussi"><figcaption><b>02</b>Paiement réussi</figcaption></figure></div>
+      </div>
+    </article><article class="proj reveal" style="--pc:#d99a0b">
+      <div class="proj-head">
+        <div><span class="pill" style="background:var(--pc)">Orientation · 2026</span><h3>MaVoie</h3><p>Une application d’orientation pour les élèves et bacheliers : un test de 20 questions, puis des fiches filières et métiers, des capsules vidéo, un comparateur et le calendrier des inscriptions. Un espace admin permet de publier et valider les contenus.</p><div class="proj-meta"><span><b>Écrans</b> 26</span><span><b>Plateformes</b> Mobile + admin web</span><span><b>Outil</b> Figma</span></div></div>
+      </div>
+      <div class="screens">
+        <div class="screens-head"><h4>Les écrans</h4><div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="mv-0">Application mobile</button><button role="tab" aria-selected="false" data-tab="mv-1">Administration</button></div></div>
+        <div class="rail mobile crop" data-panel="mv-0" data-group="mv-0"><figure><img loading="lazy" src="img/p/mv-01-demarrage.webp" alt="Démarrage"><figcaption><b>01</b>Démarrage</figcaption></figure><figure><img loading="lazy" src="img/p/mv-02-presentation.webp" alt="Présentation"><figcaption><b>02</b>Présentation</figcaption></figure><figure><img loading="lazy" src="img/p/mv-03-inscription.webp" alt="Inscription"><figcaption><b>03</b>Inscription</figcaption></figure><figure><img loading="lazy" src="img/p/mv-04-profil-scolaire.webp" alt="Profil scolaire"><figcaption><b>04</b>Profil scolaire</figcaption></figure><figure><img loading="lazy" src="img/p/mv-05-accueil.webp" alt="Accueil"><figcaption><b>05</b>Accueil</figcaption></figure><figure><img loading="lazy" src="img/p/mv-06-mon-test.webp" alt="Mon test"><figcaption><b>06</b>Mon test</figcaption></figure><figure><img loading="lazy" src="img/p/mv-07-question-du-test.webp" alt="Question du test"><figcaption><b>07</b>Question du test</figcaption></figure><figure><img loading="lazy" src="img/p/mv-08-resultat-du-test.webp" alt="Résultat du test"><figcaption><b>08</b>Résultat du test</figcaption></figure><figure><img loading="lazy" src="img/p/mv-09-explorer.webp" alt="Explorer"><figcaption><b>09</b>Explorer</figcaption></figure><figure><img loading="lazy" src="img/p/mv-10-filtres.webp" alt="Filtres"><figcaption><b>10</b>Filtres</figcaption></figure><figure><img loading="lazy" src="img/p/mv-11-fiche-filiere.webp" alt="Fiche filière"><figcaption><b>11</b>Fiche filière</figcaption></figure><figure><img loading="lazy" src="img/p/mv-12-fiche-metier.webp" alt="Fiche métier"><figcaption><b>12</b>Fiche métier</figcaption></figure><figure><img loading="lazy" src="img/p/mv-13-capsule-video.webp" alt="Capsule vidéo"><figcaption><b>13</b>Capsule vidéo</figcaption></figure><figure><img loading="lazy" src="img/p/mv-14-favoris.webp" alt="Favoris"><figcaption><b>14</b>Favoris</figcaption></figure><figure><img loading="lazy" src="img/p/mv-15-comparateur.webp" alt="Comparateur"><figcaption><b>15</b>Comparateur</figcaption></figure><figure><img loading="lazy" src="img/p/mv-16-calendrier.webp" alt="Calendrier"><figcaption><b>16</b>Calendrier</figcaption></figure><figure><img loading="lazy" src="img/p/mv-17-partage-du-resultat.webp" alt="Partage du résultat"><figcaption><b>17</b>Partage du résultat</figcaption></figure><figure><img loading="lazy" src="img/p/mv-18-question-a-un-professionnel.webp" alt="Question à un pro"><figcaption><b>18</b>Question à un pro</figcaption></figure><figure><img loading="lazy" src="img/p/mv-19-hors-connexion.webp" alt="Hors connexion"><figcaption><b>19</b>Hors connexion</figcaption></figure><figure><img loading="lazy" src="img/p/mv-20-mon-compte.webp" alt="Mon compte"><figcaption><b>20</b>Mon compte</figcaption></figure></div><div class="rail web crop" data-panel="mv-1" data-group="mv-1" hidden><figure><img loading="lazy" src="img/p/mv-a1-connexion.webp" alt="Connexion"><figcaption><b>01</b>Connexion</figcaption></figure><figure><img loading="lazy" src="img/p/mv-a2-tableau-de-bord.webp" alt="Tableau de bord"><figcaption><b>02</b>Tableau de bord</figcaption></figure><figure><img loading="lazy" src="img/p/mv-a3-contenus.webp" alt="Contenus"><figcaption><b>03</b>Contenus</figcaption></figure><figure><img loading="lazy" src="img/p/mv-a4-modifier-une-fiche.webp" alt="Modifier une fiche"><figcaption><b>04</b>Modifier une fiche</figcaption></figure><figure><img loading="lazy" src="img/p/mv-a5-validation.webp" alt="Validation"><figcaption><b>05</b>Validation</figcaption></figure><figure><img loading="lazy" src="img/p/mv-a6-comptes.webp" alt="Comptes"><figcaption><b>06</b>Comptes</figcaption></figure></div>
+      </div>
+    </article><article class="proj reveal" style="--pc:#0f6b47">
+      <div class="proj-head">
+        <div><span class="pill" style="background:var(--pc)">Service public · 2026</span><h3>MonDossier-Bénin</h3><p>Un portefeuille numérique pour ses documents administratifs (acte de naissance, diplômes, permis…) : connexion par NPI, partage par QR code à durée limitée, et un portail pour que la banque ou l’université vérifie les pièces.</p><div class="proj-meta"><span><b>Écrans</b> 10</span><span><b>Plateformes</b> Mobile + web</span><span><b>Outil</b> Figma</span></div></div>
+      </div>
+      <div class="screens">
+        <div class="screens-head"><h4>Les écrans</h4><div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="md-0">Application mobile</button><button role="tab" aria-selected="false" data-tab="md-1">Portail vérificateur</button></div></div>
+        <div class="rail mobile crop" data-panel="md-0" data-group="md-0"><figure><img loading="lazy" src="img/p/md-01-connexion-npi.webp" alt="Connexion NPI"><figcaption><b>01</b>Connexion NPI</figcaption></figure><figure><img loading="lazy" src="img/p/md-02-tableau-de-bord.webp" alt="Tableau de bord"><figcaption><b>02</b>Tableau de bord</figcaption></figure><figure><img loading="lazy" src="img/p/md-03-partage-qr-securise.webp" alt="Partage QR sécurisé"><figcaption><b>03</b>Partage QR sécurisé</figcaption></figure><figure><img loading="lazy" src="img/p/md-05-detail-document.webp" alt="Détail document"><figcaption><b>04</b>Détail document</figcaption></figure><figure><img loading="lazy" src="img/p/md-06-notification-validation.webp" alt="Notification & validation"><figcaption><b>05</b>Notification & validation</figcaption></figure><figure><img loading="lazy" src="img/p/md-07-historique.webp" alt="Historique"><figcaption><b>06</b>Historique</figcaption></figure><figure><img loading="lazy" src="img/p/md-08-profil-parametres.webp" alt="Profil & paramètres"><figcaption><b>07</b>Profil & paramètres</figcaption></figure><figure><img loading="lazy" src="img/p/md-09-tableau-de-bord-mode-sombre.webp" alt="Mode sombre"><figcaption><b>08</b>Mode sombre</figcaption></figure><figure><img loading="lazy" src="img/p/md-04-portail-verificateur.webp" alt="Portail vérificateur"><figcaption><b>09</b>Portail vérificateur</figcaption></figure></div><div class="rail web crop" data-panel="md-1" data-group="md-1" hidden><figure><img loading="lazy" src="img/p/md-10-portail-verificateur-ordinateur.webp" alt="Portail vérificateur (ordinateur)"><figcaption><b>01</b>Portail vérificateur (ordinateur)</figcaption></figure></div>
+      </div>
+    </article><article class="proj reveal" style="--pc:#5b3fd6">
+      <div class="proj-head">
+        <div><span class="pill" style="background:var(--pc)">Projet d’école · Flutter</span><h3>StudyMate</h3><p>Une application de révision pour étudiants : matières, quiz avec génération par IA, flashcards, tâches et rappels, statistiques — pensée pour fonctionner hors ligne. Projet de groupe du cours de développement mobile.</p><div class="proj-meta"><span><b>Parcours</b> 8</span><span><b>Plateforme</b> Mobile (Flutter)</span><span><b>Outil</b> Figma</span></div></div>
+      </div>
+      <div class="screens">
+        <div class="screens-head"><h4>Les écrans</h4></div>
+        <div class="rail wide" data-panel="sm-0" data-group="sm-0"><figure><img loading="lazy" src="img/p/sm-1-demarrage-accueil.webp" alt="Démarrage & accueil"><figcaption><b>01</b>Démarrage & accueil</figcaption></figure><figure><img loading="lazy" src="img/p/sm-2-matieres.webp" alt="Matières"><figcaption><b>02</b>Matières</figcaption></figure><figure><img loading="lazy" src="img/p/sm-3-quiz.webp" alt="Quiz"><figcaption><b>03</b>Quiz</figcaption></figure><figure><img loading="lazy" src="img/p/sm-7-quiz-generation-ia.webp" alt="Quiz & génération IA"><figcaption><b>04</b>Quiz & génération IA</figcaption></figure><figure><img loading="lazy" src="img/p/sm-4-flashcards.webp" alt="Flashcards"><figcaption><b>05</b>Flashcards</figcaption></figure><figure><img loading="lazy" src="img/p/sm-5-taches-rappels.webp" alt="Tâches & rappels"><figcaption><b>06</b>Tâches & rappels</figcaption></figure><figure><img loading="lazy" src="img/p/sm-6-statistiques-parametres.webp" alt="Statistiques & paramètres"><figcaption><b>07</b>Statistiques & paramètres</figcaption></figure><figure><img loading="lazy" src="img/p/sm-8-confirmations-permissions.webp" alt="Confirmations & permissions"><figcaption><b>08</b>Confirmations & permissions</figcaption></figure></div>
+      </div>
+    </article>
+  </div>
+
+</section>
+
+<!-- ============ 02 AFFICHES ============ -->
+<section id="affiches" style="background:var(--ebene-2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <div>
+        <h2>Affiches &amp; <em>visuels</em></h2>
+        <p>Campagnes pour les réseaux sociaux, lancements de produits, formations et événements — réalisées avec Photoshop, Illustrator et Figma pour des marques et entrepreneurs.</p>
+      </div>
+    </div>
+    <div class="filters" role="group" aria-label="Filtrer les affiches">
+      <button aria-pressed="true" data-f="all">Tout<sup></sup></button>
+      <button aria-pressed="false" data-f="mode">Mode &amp; beauté<sup></sup></button>
+      <button aria-pressed="false" data-f="food">Food<sup></sup></button>
+      <button aria-pressed="false" data-f="business">Business &amp; formation<sup></sup></button>
+      <button aria-pressed="false" data-f="event">Événements &amp; culture<sup></sup></button>
+    </div>
+    <div class="masonry" id="masonry" data-group="affiches"></div>
+  </div>
+</section>
+
+<!-- ============ 03 IDENTITÉS ============ -->
+<section id="identites" class="ident">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">03</span>
+      <div>
+        <h2>Identités <em>visuelles</em></h2>
+        <p>Logos et signatures pour des studios, boutiques, incubateurs et marques culturelles.</p>
+      </div>
+    </div>
+    <div class="logos reveal">
+      <div class="logo"><img loading="lazy" src="img/logos/africonex.webp" alt="Logo Africonex Studio"><span>Africonex Studio</span></div>
+      <div class="logo"><img loading="lazy" src="img/logos/cxdrxc.webp" alt="Logo CXDRXC"><span>CXDRXC</span></div>
+      <div class="logo"><img loading="lazy" src="img/logos/ceo.webp" alt="Logo CEO"><span>CEO</span></div>
+      <div class="logo"><img loading="lazy" src="img/logos/ddstore.webp" alt="Logo DDStore"><span>DDStore</span></div>
+      <div class="logo"><img loading="lazy" src="img/logos/houekpo.webp" alt="Logo Huɛkpɔ"><span>Huɛkpɔ</span></div>
+      <div class="logo"><img loading="lazy" src="img/logos/nid.webp" alt="Logo Nouvel Incubateur de Développement"><span>NID — Incubateur</span></div>
+      <div class="logo"><img loading="lazy" src="img/logos/zak.webp" alt="Logo ZAK Studio"><span>ZAK Studio</span></div>
+      <div class="logo"><img loading="lazy" src="img/logos/signature.webp" alt="Logo LA MKD Deal Office"><span>MKD Deal Office</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 PARCOURS ============ -->
+<section id="parcours">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">04</span>
+      <div><h2>Parcours &amp; <em>savoir-faire</em></h2></div>
+    </div>
+    <div class="parcours-grid">
+      <ol class="timeline reveal">
+        <li style="--c:var(--jaune)"><small>Depuis 2025</small><h3>Designer freelance</h3><p>Affiches, identités visuelles et maquettes d'applications pour des entrepreneurs et marques au Bénin.</p></li>
+        <li style="--c:var(--rouge)"><small>Filière</small><h3>Internet et Multimédia</h3><p>IFRI — Université d'Abomey-Calavi</p></li>
+        <li style="--c:var(--vert)"><small>Juillet 2026</small><h3>UI/UX Design (32 h) · Animation 2D-3D (20 h)</h3><p>Formations certifiantes à l'IFRI avec AKS-Pictures.</p></li>
+        <li style="--c:var(--bleu)"><small>2023</small><h3>Anglais — niveau B1</h3><p>Formation de 30 h, TBC Cabinet International de Langues.</p></li>
+        <li style="--c:var(--ocre)"><small>Avant</small><h3>DTI — Informatique</h3><p>Lycée Technique et Professionnel d'Agbokou.</p></li>
+      </ol>
+      <div class="skills reveal">
+        <h3>Ce que je fais</h3>
+        <div class="chips"><span>Recherche utilisateur</span><span>Parcours &amp; wireframes</span><span>Maquettes haute fidélité</span><span>Prototypes interactifs</span><span>Design system</span><span>Affiches &amp; social media</span><span>Logos &amp; chartes</span><span>Motion 2D</span></div>
+        <h3>Mes outils</h3>
+        <div class="chips"><span>Figma</span><span>Illustrator</span><span>Photoshop</span><span>Flutter</span></div>
+        <div class="approach"><p>« Je dessine d'abord pour la personne qui a le moins de temps, le moins de data et le moins de patience. Si ça marche pour elle, ça marche pour tout le monde. »</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <h2>Un projet d'app, de site ou de campagne ?</h2>
+      <p>Je suis disponible pour des missions freelance, au Bénin comme à l'international. Racontez-moi votre idée, je vous réponds rapidement.</p>
+      <div class="contact-links">
+        <a class="btn btn-dark" href="https://wa.me/2290167343057?text=Bonjour%20Dieudonn%C3%A9%2C%20j%27aimerais%20discuter%20d%27un%20projet.">Discuter sur WhatsApp →</a>
+        <a class="btn btn-light" href="cv.html">Voir mon CV</a>
+        <a class="btn btn-light" href="mailto:zapabdieu@gmail.com">Envoyer un e-mail</a>
+      </div>
+      <div class="coords">
+        <div><small>WhatsApp</small><a href="https://wa.me/2290167343057">+229 01 67 34 30 57</a></div>
+        <div><small>E-mail</small><a href="mailto:zapabdieu@gmail.com">zapabdieu@gmail.com</a></div>
+        <div><small>LinkedIn</small><a href="https://www.linkedin.com/in/dieudonne-zannou/">Johmion Dieudonné Michaïah ZANNOU</a></div>
+        <div><small>Instagram</small><a href="https://instagram.com/johmion007">@johmion007</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Johmion Dieudonné Michaïah ZANNOU — Designer UI/UX &amp; graphiste</span><span>Inspiré des tentures d'Abomey ✦ Cotonou</span></div></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Aperçu">
+  <button class="close" aria-label="Fermer">✕</button>
+  <button class="prev" aria-label="Précédent">←</button>
+  <img alt="">
+  <button class="next" aria-label="Suivant">→</button>
+  <div class="cap"></div>
+</div>
+
+<script>
+const AFFICHES=[
+ ["africa-boubou","Tenues africaines tendance","mode"],["african-queen","African Queen","mode"],["emilio-couture","Emilio's Couture","mode"],
+ ["chaussures","Chaussures de classe","mode"],["lyne-touche","Lyne Touche — beauté","mode"],["christ-design","Christ Design","mode"],
+ ["mai-awoof","Mai Awoof","mode"],["alake-food","Atchièkè Tchéké — Alake Food","food"],["ddstore-food","DDStore — livraison","food"],
+ ["delicious-menu","Delicious Menu","food"],["marche-digital","Dominez le marché digital","business"],["formation-ecommerce","Formation e-commerce","business"],
+ ["pack-entrepreneurs","Pack ultime des entrepreneurs","business"],["livres-trading","3 livres pour le trading","business"],["marketing-digital","Formation marketing digital","business"],
+ ["master-graphic","Master Graphic Designing","business"],["afro","Unlocking African Creative Potential","business"],["photography-studio","Studio photo","business"],
+ ["big-ayato","Le Big Ayato","business"],["johmion-graphics","Johmion Design Graphics","business"],["graphic-designer","Graphic Designer","business"],
+ ["benin-heritage","Bénin — Art & Heritage","event"],["fete-des-meres","Bonne fête des mères","event"],["birthday","Happy Birthday","event"],
+ ["happy-mai","Happy New Month — Mai","event"],["lundi","Bon lundi","event"],["reprenez-controle","Reprenez le contrôle","event"]
+];
+const LABEL={mode:"Mode & beauté",food:"Food",business:"Business",event:"Événement"};
+// ordre mélangé pour une mosaïque variée
+const order=[0,7,10,21,1,11,22,8,2,12,23,3,13,24,4,14,9,5,15,25,6,16,26,17,18,19,20];
+const m=document.getElementById('masonry');
+order.forEach(i=>{const [f,t,c]=AFFICHES[i];
+  const el=document.createElement('figure');el.className='poster';el.dataset.cat=c;el.tabIndex=0;
+  el.dataset.src='img/affiches/'+f+'.webp';el.dataset.cap=t;
+  el.innerHTML=`<img loading="lazy" src="img/affiches/${f}.webp" alt="Affiche : ${t}"><figcaption>${t}<span>${LABEL[c]}</span></figcaption>`;
+  m.appendChild(el);});
+// compteurs + filtres
+const btns=document.querySelectorAll('.filters button');
+btns.forEach(b=>{const f=b.dataset.f;b.querySelector('sup').textContent=f==='all'?AFFICHES.length:AFFICHES.filter(a=>a[2]===f).length;
+  b.addEventListener('click',()=>{btns.forEach(x=>x.setAttribute('aria-pressed',x===b));
+    m.querySelectorAll('.poster').forEach(p=>p.hidden=!(f==='all'||p.dataset.cat===f));});});
+// onglets ADMINI+
+document.querySelectorAll('.screens').forEach(sc=>{const tabs=sc.querySelectorAll('.tabs button');
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x===t));
+  sc.querySelectorAll('[data-panel]').forEach(p=>p.hidden=p.dataset.panel!==t.dataset.tab);}));});
+// visionneuse
+const lb=document.getElementById('lb'),lbImg=lb.querySelector('img'),lbCap=lb.querySelector('.cap');let list=[],idx=0,last=null;
+function items(group){return [...group.querySelectorAll('figure')].filter(f=>!f.hidden).map(f=>({src:f.dataset.src||f.querySelector('img').src,cap:f.dataset.cap||f.querySelector('figcaption')?.textContent||''}));}
+function show(){lbImg.src=list[idx].src;lbImg.alt=list[idx].cap;lbCap.textContent=list[idx].cap+'  ·  '+(idx+1)+' / '+list.length;}
+function open(fig){const g=fig.closest('[data-group]');list=items(g);const vis=[...g.querySelectorAll('figure')].filter(f=>!f.hidden);idx=vis.indexOf(fig);last=fig;show();lb.classList.add('open');lb.querySelector('.close').focus();document.body.style.overflow='hidden';}
+function close(){lb.classList.remove('open');document.body.style.overflow='';last&&last.focus?.();}
+document.addEventListener('click',e=>{const f=e.target.closest('[data-group] figure');if(f)open(f);});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open')){const f=e.target.closest?.('[data-group] figure');if(f&&e.key==='Enter')open(f);return;}
+  if(e.key==='Escape')close();if(e.key==='ArrowRight'){idx=(idx+1)%list.length;show();}if(e.key==='ArrowLeft'){idx=(idx-1+list.length)%list.length;show();}});
+lb.querySelector('.close').onclick=close;
+lb.querySelector('.next').onclick=()=>{idx=(idx+1)%list.length;show();};
+lb.querySelector('.prev').onclick=()=>{idx=(idx-1+list.length)%list.length;show();};
+lb.addEventListener('click',e=>{if(e.target===lb)close();});
+// apparition
+if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(r=>io.observe(r));}else document.querySelectorAll('.reveal').forEach(r=>r.classList.add('in'));
+</script>
+</body>
+</html>
